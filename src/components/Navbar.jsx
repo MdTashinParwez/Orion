@@ -9,12 +9,12 @@ function Navbar() {
     <div className='flex justify-between items-center py-5 font-medium -mt-8'>
 
       
-      <img src={assets.logo}  className='w-36' alt="" />
+     <Link to='/' ><img src={assets.logo}  className='w-36' alt="" /></Link>
 
 
      {/* Navbar Links */}
 
-      <ul className='hidden sm:flex gap-8 tm-sm text-gray-700'>
+      <ul className='hidden sm:flex gap-8  text-gray-700'>
 
         <NavLink to = '/' className='flex flex-col items-center gap-1'>
           <p>HOME</p>
@@ -68,11 +68,11 @@ function Navbar() {
 
 
       {/* Mobile Menu */}
-      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full ' :' w-0 '}`}>
+      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all duration-500 ${visible ? 'w-full ' :' w-0 '}`}>
 
         <div className='flex flex-col text-gray-600'>
           <div onClick={() => setvisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
-            <img className='h-4  rotate-180' src="{assest.dropdown_icon" alt="" />
+            <img className='h-4  rotate-180' src={assets.dropdown_icon} alt="" />
             <p>Back</p>
           </div>
           <NavLink onClick={() => setvisible(false)} to ='/' className='py-2 pl-6 border'>Home</NavLink> 
