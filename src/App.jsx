@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Order from './pages/Order'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 function App() {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] '>
@@ -24,8 +25,9 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='/order' element={<Order />} />
-
+        
       </Routes>
+      <Footer/>
     </div>
   )
 }

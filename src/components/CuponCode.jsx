@@ -19,7 +19,10 @@
 
 import React from 'react'
 
+
 function CouponCode() {
+  const onSubmitHandler=(event) =>{
+  event.preventDefault();}
   return (
     <div className='text-center py-12 px-4'>
       {/* Heading */}
@@ -31,7 +34,7 @@ function CouponCode() {
       </p>
 
       {/* Form */}
-      <form className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border border-gray-300 rounded overflow-hidden'>
+      <form  onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border border-gray-300 rounded overflow-hidden'>
         <input
           className='w-full px-4 py-3 outline-none text-sm text-gray-700'
           type="email"
