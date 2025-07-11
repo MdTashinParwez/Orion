@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
 import { products } from "../assets/assets";
+import { Link } from 'react-router-dom';
 
 
 function BestSeller() {
@@ -30,13 +31,15 @@ function BestSeller() {
         </div>
         </div>  
         <div className='text-center mt-6'>
-  <button className='bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-800 transition'>
-    View All Best Sellers
-  </button>
-</div>
+            <Link to={"/collection"}>
+              <button  className='bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-800 transition'>
+                          View All Best Sellers
+              </button>
+            </Link>
+        </div>
     
     </div>
   )
 }
 
-export default BestSeller
+ export default BestSeller

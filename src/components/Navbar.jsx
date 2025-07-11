@@ -6,7 +6,7 @@ function Navbar() {
     const [visible ,setvisible] =useState(false);
 
   return (
-    <div className='flex justify-between items-center py-5 font-medium -mt-8'>
+    <div className=' flex justify-between items-center py-5 font-medium -mt-8'>
 
       
      <Link to='/' ><img src={assets.logo}  className='w-36' alt="" /></Link>
@@ -41,10 +41,10 @@ function Navbar() {
 
       {/* side items */}
       <div className='flex items-center gap-4'>
-        <img src={assets.search_icon} className='w-5 cursor-pointer' alt="search_Icon" />
+        <img src={assets.search_icon} className='w-5 cursor-pointer hover:scale-110 transition-transform' alt="search_Icon" />
 
         <div className='group relative'>
-          <img src={assets.profile_icon} className='w-5 cursor-pointer' alt="cart_Icon" />
+          <img src={assets.profile_icon} className='w-5 cursor-pointer hover:scale-110 transition-transform' alt="cart_Icon" />
 
           {/* Dropdown Menu */}
           <div className='absolute dropdown-menu  pt-4 right-0 bg-white shadow-lg rounded-lg hidden group-hover:block'>
@@ -58,8 +58,8 @@ function Navbar() {
         </div>
 
         <Link to='/cart' className='relative'>
-         <img src={assets.cart_icon} className='w-5 min-w-5 ' alt="cart_icon" />
-         <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[-8px]'>10</p>
+         <img src={assets.cart_icon} className='w-5 min-w-5 hover:scale-110 transition-transform' alt="cart_icon" />
+         <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[-8px] '>10</p>
         </Link>
 
         <img onClick={() => setvisible(true)} src={assets.menu_icon} className='w-5  cursor-pointer sm:hidden ' alt="profile_icon" />
