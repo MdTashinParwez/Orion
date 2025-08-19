@@ -181,7 +181,7 @@ import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
 
 function Collection() {
-  const { products } = useContext(ShopContext);
+  const { products ,search, showSearch,  } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -207,7 +207,10 @@ function Collection() {
   // Filter logic
   const applyFilter = () => {
     let filtered = [...products];
-
+    
+     if(showSearch && search.length ) {
+      filtered = filtered.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+     }
     if (category.length > 0) {
       filtered = filtered.filter(item => category.includes(item.category));
     }
@@ -244,7 +247,7 @@ function Collection() {
   // Effects
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, sortType]);
+  }, [category, subCategory, sortType,search, showSearch]);
 
   // UI
   return (

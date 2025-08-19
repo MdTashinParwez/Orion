@@ -6,7 +6,7 @@ import { products } from "../assets/assets";
  const ShopContextProvider =(props)=>{
 
     const currency = '₹';
-    const delivery_fee = 60;
+    const delivery_fee = 59;
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     

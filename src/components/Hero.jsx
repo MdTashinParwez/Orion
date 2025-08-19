@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {assets} from '../assets/assets'
 
 
 function Hero() {
+  //auto image code 
+  const images =[assets.hero_img,assets.hero_img2,assets.hero_img3] //array of image
+
+  const [currentIndex,setCurrentIndex] = useState(0); // trac the active index
+
+  //auto increment evry 5sec
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setCurrentIndex((prev)=>
+      prev== images.length -1 ? 0: prev+1);
+    },2000);
+    return()=>clearInterval(interval);
+  },[images.length])
+
+  
+
+
+
+
+
   return (
+
     <div className='flex flex-col sm:flex-row border  rounded-md   border-gray-400'>
         {/** left side */}
         <div className="w-ful sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
@@ -26,8 +47,19 @@ function Hero() {
 
      {/** right side */}
 
-        <img className='w-full sm:w-1/2 ' src={assets.hero_img} alt="" />
+       <div className='w-full sm:w-1/2  relative h-[400px] sm:h-[500px] overflow-hidden '>
+          {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Hero"
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
        
+       </div>
         
         
       
